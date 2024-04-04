@@ -1,0 +1,617 @@
+def start_spel(aantal_spelers):
+    dict1 = dict()
+    if aantal_spelers == 2:
+        dict1[1] = []
+        dict1[2] = []
+    elif aantal_spelers == 3:
+        dict1[1] = []
+        dict1[2] = []
+        dict1[3] = []
+    elif aantal_spelers == 4:
+        dict1[1] = []
+        dict1[2] = []
+        dict1[3] = []
+        dict1[4] = []
+    elif aantal_spelers == 5:
+        dict1[1] = []
+        dict1[2] = []
+        dict1[3] = []
+        dict1[4] = []
+        dict1[5] = []
+    elif aantal_spelers == 6:
+        dict1[1] = []
+        dict1[2] = []
+        dict1[3] = []
+        dict1[4] = []
+        dict1[5] = []
+        dict1[6] = []
+    return dict1
+
+
+def beurt_zonder_bouwkeet(spelbord, speler):
+    zeker = False
+    while not zeker:
+        gekocht = "0"
+        print('0: niets')
+        print('1: parkeergarage')
+        print('2: architect')
+        print('3: bouwkeet')
+        print('4: rijtjeshuis')
+        print('5: restaurant')
+        print('6: woonwijk')
+        print('7: busstation')
+        print('8: school')
+        print('9: winkelstraat')
+        print('10: park')
+        print('11: woonhuis')
+        print('12: industriepark')
+        print('13: winkelpassage')
+        print('14: industrieterrein')
+        print('15: bioscoop')
+        print('16: gemeentehuis')
+        print('17: klaverblad')
+        print('18: modeboetiek')
+        print('19: kantoorgebouw')
+        print('20: warenhuis')
+        print('21: snelweg')
+        print('22: zakencentrum')
+        print('23: flatgebouw')
+        print('24: beursgebouw')
+        print('25: sportpark')
+        print('26: bioscoopcomplex')
+        print('27: treinstation')
+        print('28: onderzoekscentrum')
+        print('29: brug')
+        print('30: moderne kunst')
+        print('31: stadsvilla')
+        print('32: theater')
+        print('33: universiteit')
+        print('34: technopark')
+        print('35: museum')
+        print('36: superstore')
+        print('37: stadion')
+        print('38: casino')
+        print('39: stadhuis')
+        print('40: ziekenhuis')
+        print('41: concertgebouw')
+        print('42: congrescentrum')
+        print('43: handelscentrum')
+        print('44: wolkenkrabber')
+        print('45: winkelcentrum')
+        print('46: operagebouw')
+        print('47: pretpark')
+        print('48: vliegveld')
+        print('49: monument')
+        print('50: parkeer + reis')
+        print('51: metro')
+        print('Speler', speler, 'is aan beurt.')
+        gekocht = input('Wat heeft deze speler gekocht?')
+        if gekocht.isdigit() and -1 < int(gekocht) < 52:
+            gekocht = int(gekocht)
+            print('Speler', speler, 'heeft', gekocht, 'gekocht.')
+            print('Ja = 1')
+            print('Nee = 2')
+            jaofnee = input('Bent u hier zeker van?')
+            if jaofnee == 1 or '1':
+                zeker = True
+                if gekocht != 0:
+                    spelbord[speler].append(gekocht)
+            else:
+                zeker = False
+        else:
+            zeker = False
+
+    return spelbord
+
+
+def beurt_met_bouwkeet(spelbord, speler):
+    zeker = False
+    while not zeker:
+        gekocht = "0"
+        print('0: niets')
+        print('1: parkeergarage')
+        print('2: architect')
+        print('3: bouwkeet')
+        print('4: rijtjeshuis')
+        print('5: restaurant')
+        print('6: woonwijk')
+        print('7: busstation')
+        print('8: school')
+        print('9: winkelstraat')
+        print('10: park')
+        print('11: woonhuis')
+        print('12: industriepark')
+        print('13: winkelpassage')
+        print('14: industrieterrein')
+        print('15: bioscoop')
+        print('16: gemeentehuis')
+        print('17: klaverblad')
+        print('18: modeboetiek')
+        print('19: kantoorgebouw')
+        print('20: warenhuis')
+        print('21: snelweg')
+        print('22: zakencentrum')
+        print('23: flatgebouw')
+        print('24: beursgebouw')
+        print('25: sportpark')
+        print('26: bioscoopcomplex')
+        print('27: treinstation')
+        print('28: onderzoekscentrum')
+        print('29: brug')
+        print('30: moderne kunst')
+        print('31: stadsvilla')
+        print('32: theater')
+        print('33: universiteit')
+        print('34: technopark')
+        print('35: museum')
+        print('36: superstore')
+        print('37: stadion')
+        print('38: casino')
+        print('39: stadhuis')
+        print('40: ziekenhuis')
+        print('41: concertgebouw')
+        print('42: congrescentrum')
+        print('43: handelscentrum')
+        print('44: wolkenkrabber')
+        print('45: winkelcentrum')
+        print('46: operagebouw')
+        print('47: pretpark')
+        print('48: vliegveld')
+        print('49: monument')
+        print('50: parkeer + reis')
+        print('51: metro')
+        print('Speler', speler, 'is aan beurt.')
+        gekocht = input('Wat heeft deze speler gekocht?')
+        if gekocht.isdigit() and -1 < int(gekocht) < 52:
+            gekocht = int(gekocht)
+            print('Speler', speler, 'heeft', gekocht, 'gekocht.')
+            print('Ja = 1')
+            print('Nee = 2')
+            jaofnee = input('Bent u hier zeker van?')
+            if jaofnee == 1 or '1':
+                zeker = True
+                if gekocht != 0:
+                    spelbord[speler].append(gekocht)
+                    print('0: niets')
+                    print('1: parkeergarage')
+                    print('2: architect')
+                    print('3: bouwkeet')
+                    print('4: rijtjeshuis')
+                    print('5: restaurant')
+                    print('6: woonwijk')
+                    print('7: busstation')
+                    print('8: school')
+                    print('9: winkelstraat')
+                    print('10: park')
+                    print('11: woonhuis')
+                    print('12: industriepark')
+                    print('13: winkelpassage')
+                    print('14: industrieterrein')
+                    print('15: bioscoop')
+                    print('16: gemeentehuis')
+                    print('17: klaverblad')
+                    print('18: modeboetiek')
+                    print('19: kantoorgebouw')
+                    print('20: warenhuis')
+                    print('21: snelweg')
+                    print('22: zakencentrum')
+                    print('23: flatgebouw')
+                    print('24: beursgebouw')
+                    print('25: sportpark')
+                    print('26: bioscoopcomplex')
+                    print('27: treinstation')
+                    print('28: onderzoekscentrum')
+                    print('29: brug')
+                    print('30: moderne kunst')
+                    print('31: stadsvilla')
+                    print('Speler', speler, 'is nog eens aan beurt.')
+                    gekocht2 = input('Wat heeft deze speler nog gekocht? (met bouwkeet)')
+                    if gekocht2.isdigit() and -1 < int(gekocht2) < 32 and int(gekocht2) != 2:
+                        gekocht2 = int(gekocht2)
+                        print('Speler', speler, 'heeft', gekocht2, 'gekocht.')
+                        print('Ja = 1')
+                        print('Nee = 2')
+                        jaofnee = input('Bent u hier zeker van?')
+                        if jaofnee == 1 or '1':
+                            zeker = True
+                            if gekocht2 != 0:
+                                spelbord[speler].append(gekocht2)
+                        else:
+                            zeker = False
+                    else:
+                        zeker = False
+            else:
+                zeker = False
+        else:
+            zeker = False
+
+    return spelbord
+
+
+def ronde(spelbord):
+    for speler in spelbord:
+        hasbouwkeet = False
+        if 3 in spelbord[speler]:
+            hasbouwkeet = True
+        if not hasbouwkeet:
+            spelbord = beurt_zonder_bouwkeet(spelbord, speler)
+        else:
+            spelbord = beurt_met_bouwkeet(spelbord, speler)
+    return spelbord
+
+
+def totaal_aantal_utiliteiten(spelbord, speler):
+    fonttot = 0
+    autotot = 0
+    winktot = 0
+    for kaart in spelbord[speler]:
+        if kaart == 1:
+            fonttot = fonttot + 1
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 4:
+            fonttot = fonttot + 1
+        elif kaart == 5:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 6:
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 7:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 9:
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 10:
+            fonttot = fonttot + 1
+        elif kaart == 13:
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 14:
+            autotot = autotot + 1
+        elif kaart == 15:
+            fonttot = fonttot + 1
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 18:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 20:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 21:
+            autotot = autotot + 1
+        elif kaart == 22:
+            fonttot = fonttot + 2
+        elif kaart == 23:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 24:
+            autotot = autotot + 1
+        elif kaart == 25:
+            autotot = autotot + 2
+        elif kaart == 26:
+            autotot = autotot + 1
+            winktot = winktot + 2
+        elif kaart == 27:
+            fonttot = fonttot + 1
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 29:
+            autotot = autotot + 1
+        elif kaart == 30:
+            fonttot = fonttot + 2
+        elif kaart == 32:
+            fonttot = fonttot + 1
+        elif kaart == 33:
+            fonttot = fonttot + 1
+        elif kaart == 34:
+            fonttot = fonttot + 1
+            autotot = autotot + 1
+        elif kaart == 35:
+            fonttot = fonttot + 1
+        elif kaart == 36:
+            autotot = autotot + 1
+            winktot = winktot + 2
+        elif kaart == 37:
+            autotot = autotot + 2
+        elif kaart == 38:
+            winktot = winktot + 1
+        elif kaart == 39:
+            fonttot = fonttot + 1
+        elif kaart == 40:
+            fonttot = fonttot + 1
+        elif kaart == 41:
+            fonttot = fonttot + 1
+        elif kaart == 42:
+            fonttot = fonttot + 1
+            winktot = winktot + 1
+        elif kaart == 43:
+            winktot = winktot + 3
+        elif kaart == 44:
+            fonttot = fonttot + 1
+        elif kaart == 45:
+            autotot = autotot + 1
+            winktot = winktot + 2
+        elif kaart == 46:
+            fonttot = fonttot + 1
+        elif kaart == 47:
+            autotot = autotot + 3
+        elif kaart == 48:
+            autotot = autotot + 1
+            winktot = winktot + 1
+        elif kaart == 49:
+            fonttot = fonttot + 3
+        elif kaart == 50:
+            autotot = autotot + 2
+        else:
+            fonttot = fonttot
+            autotot = autotot
+            winktot = winktot
+
+    return [fonttot, autotot, winktot]
+
+
+def totaal_aan_geld(spelbord, speler):
+    gtot = 0
+    fonttot = totaal_aantal_utiliteiten(spelbord, speler)[0]
+    autotot = totaal_aantal_utiliteiten(spelbord, speler)[1]
+    winktot = totaal_aantal_utiliteiten(spelbord, speler)[2]
+    for kaart in spelbord[speler]:
+        if kaart == 2:
+            gtot = gtot + 1
+        elif kaart == 5:
+            if 22 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 7:
+            if 9 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 9:
+            gtot = gtot + 1
+        elif kaart == 11:
+            gtot = gtot + 1
+        elif kaart == 12:
+            gtot = gtot + 1
+            if 28 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 13:
+            gtot = gtot + winktot
+        elif kaart == 14:
+            gtot = gtot + 1
+        elif kaart == 15:
+            gtot = gtot + 1
+        elif kaart == 16:
+            gtot = gtot + fonttot
+        elif kaart == 17:
+            gtot = gtot + autotot
+        elif kaart == 18:
+            gtot = gtot + 1
+            if 22 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 19:
+            gtot = gtot + 1
+            if 4 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 20:
+            gtot = gtot + 2
+        elif kaart == 22:
+            gtot = gtot + 1
+        elif kaart == 23:
+            gtot = gtot + 1
+        elif kaart == 24:
+            gtot = gtot + 1
+        elif kaart == 26:
+            gtot = gtot + 2
+        elif kaart == 27:
+            gtot = gtot + 1
+        elif kaart == 28:
+            gtot = gtot + 1
+        elif kaart == 29:
+            gtot = gtot + 1
+            if 21 in spelbord[speler]:
+                gtot = gtot + 1
+        elif kaart == 32:
+            gtot = gtot + 1
+        elif kaart == 34:
+            gtot = gtot + 2
+        elif kaart == 35:
+            k = 0
+            for spelers in spelbord:
+                for kaart2 in spelbord[spelers]:
+                    if kaart2 == 8:
+                        k = k + 1
+            gtot = gtot + k
+        elif kaart == 36:
+            gtot = gtot + 3
+        elif kaart == 37:
+            gtot = gtot + 2
+        elif kaart == 38:
+            gtot = gtot + 4
+        elif kaart == 40:
+            gtot = gtot + 1
+        elif kaart == 42:
+            gtot = gtot + 2
+        elif kaart == 43:
+            gtot = gtot + 2
+        elif kaart == 44:
+            gtot = gtot + 1
+        elif kaart == 45:
+            gtot = gtot + 3
+        elif kaart == 47:
+            gtot = gtot + 2
+        elif kaart == 48:
+            gtot = gtot + 1
+        elif kaart == 49:
+            gtot = gtot + 1
+        else:
+            gtot = gtot
+    return gtot
+
+
+def totaal_aan_punten(spelbord, speler):
+    ptot = 0
+    fonttot = totaal_aantal_utiliteiten(spelbord, speler)[0]
+    autotot = totaal_aantal_utiliteiten(spelbord, speler)[1]
+    winktot = totaal_aantal_utiliteiten(spelbord, speler)[2]
+    for kaart in spelbord[speler]:
+        if kaart == 4:
+            ptot = ptot + 1
+        elif kaart == 5:
+            ptot = ptot + 1
+        elif kaart == 6:
+            ptot = ptot + 1
+        elif kaart == 7:
+            ptot = ptot + 1
+        elif kaart == 8:
+            ptot = ptot + 2
+        elif kaart == 10:
+            ptot = ptot + fonttot
+        elif kaart == 16:
+            ptot = ptot + 1
+        elif kaart == 17:
+            ptot = ptot + autotot
+        elif kaart == 19:
+            ptot = ptot + 2
+        elif kaart == 21:
+            k = 0
+            for spelers in spelbord:
+                for kaart2 in spelbord[spelers]:
+                    if kaart2 == 17:
+                        k = k + 1
+            ptot = ptot + k
+        elif kaart == 22:
+            ptot = ptot + 1
+        elif kaart == 23:
+            ptot = ptot + 1
+        elif kaart == 24:
+            ptot = ptot + 1
+        elif kaart == 25:
+            ptot = ptot + 3
+        elif kaart == 26:
+            ptot = ptot + 1
+        elif kaart == 27:
+            ptot = ptot + 2
+        elif kaart == 28:
+            ptot = ptot + 2
+            for spelers in spelbord:
+                if 33 in spelbord[spelers]:
+                    ptot = ptot + 2
+        elif kaart == 29:
+            ptot = ptot + 2
+        elif kaart == 30:
+            ptot = ptot + 3
+        elif kaart == 31:
+            ptot = ptot + 3
+            j = 0
+            for kaart2 in spelbord[speler]:
+                if kaart2 == 31:
+                    j = j + 2
+            ptot = ptot + j - 2
+        elif kaart == 32:
+            ptot = ptot + 3
+        elif kaart == 33:
+            ptot = ptot + 4
+            for spelers in spelbord:
+                for kaart2 in spelbord[spelers]:
+                    if kaart2 == 8:
+                        ptot = ptot + 1
+        elif kaart == 34:
+            ptot = ptot + 2
+        elif kaart == 35:
+            ptot = ptot + 4
+        elif kaart == 36:
+            ptot = ptot + 1
+        elif kaart == 37:
+            ptot = ptot + 3
+        elif kaart == 38:
+            ptot = ptot + 1
+        elif kaart == 39:
+            ptot = ptot + 5
+        elif kaart == 40:
+            ptot = ptot + 4
+        elif kaart == 41:
+            ptot = ptot + 7
+        elif kaart == 42:
+            ptot = ptot + 5
+        elif kaart == 43:
+            ptot = ptot + winktot
+        elif kaart == 44:
+            ptot = ptot + 7
+        elif kaart == 45:
+            ptot = ptot + winktot
+        elif kaart == 46:
+            ptot = ptot + 8
+        elif kaart == 47:
+            ptot = ptot + 5
+        elif kaart == 48:
+            ptot = ptot + 8
+        elif kaart == 49:
+            ptot = ptot + 8
+        elif kaart == 50:
+            lijst1 = []
+            for spelers in spelbord:
+                if spelers != speler:
+                    j = totaal_aantal_utiliteiten(spelbord, spelers)[1]
+                    lijst1.append(j)
+            ptot = ptot + max(lijst1) + autotot
+        elif kaart == 51:
+            lijst1 = []
+            for spelers in spelbord:
+                if spelers != speler:
+                    j = totaal_aantal_utiliteiten(spelbord, spelers)[0]
+                    lijst1.append(j)
+            ptot = ptot + max(lijst1) + fonttot
+
+    return ptot
+
+
+def is_spel_gedaan(spelbord, max_aantal_punten):
+    for speler in spelbord:
+        if totaal_aan_punten(spelbord, speler) >= max_aantal_punten:
+            return True
+    return False
+
+
+def winnaar(spelbord):
+    dict1 = dict()
+    lijst1 = []
+    for speler in spelbord:
+        dict1[totaal_aan_punten(spelbord, speler)] = speler
+    for key in dict1:
+        lijst1.append(key)
+    m = max(lijst1)
+    winner = dict1.get(m)
+    return winner
+
+
+def start(aantal_spelers):
+    max_aantal_punten = 50
+    spelbord = start_spel(aantal_spelers)
+    while not is_spel_gedaan(spelbord, max_aantal_punten):
+        for speler in spelbord:
+            print('Speler', speler, 'krijgt', totaal_aan_geld(spelbord, speler), 'geld.')
+            print('Speler', speler, 'heeft', totaal_aan_punten(spelbord, speler), 'punten.')
+        input('Klaar om in te geven?')
+        spelbord = ronde(spelbord)
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('Speler', winnaar(spelbord), 'is de winnaar.')
+    print('Deze speler heeft gewonnen met de set:', spelbord[winnaar(spelbord)])
+    print('Deze set is', totaal_aan_punten(spelbord, winnaar(spelbord)), 'punten waard.')
+    print('Proficiat!')
+    print('')
+    print('')
+    print('')
+    print('')
+    print('De sets van de andere spelers waren:')
+    for spelers in spelbord:
+        if spelers != winnaar(spelbord):
+            print('Speler', spelers, 'had', spelbord[spelers], 'en had', totaal_aan_punten(spelbord, spelers), 'punten.')
+
+
+start(5)
